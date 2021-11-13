@@ -1,0 +1,286 @@
+$backgroundColor: hsl(226, 43%, 10%);
+$profileBackgroundColor: hsl(246, 80%, 60%);
+$profileBorderColor: white;
+$InfoBackgroundColor: hsl(235, 46%, 20%);
+$hoverBackgroundColor: hsl(236, 31%, 38%);
+$textColor: gray;
+$workingColor: hsl(15, 100%, 70%);
+$playingColor: hsl(195, 74%, 62%);
+$studyingColor: hsl(348, 100%, 68%);
+$exercisingColor: hsl(145, 58%, 55%);
+$socialingColor: hsl(264, 64%, 52%);
+$selfCaringColor: hsl(43, 84%, 65%);
+$mobileDesignone: 1070px;
+$mobileDesigntwo: 800px;
+@mixin mobile-design {
+  @media (max-width: $mobileDesignone) {
+    @content;
+  }
+}
+@mixin mobile-design-two {
+  @media (max-width: $mobileDesigntwo) {
+    @content;
+  }
+}
+@mixin displayFlex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $backgroundColor;
+  width: 100%;
+  height: 100vh;
+  @include displayFlex(row, center, center);
+}
+.container {
+  @include displayFlex(row, center, flex-start);
+  @include mobile-design-two {
+    @include displayFlex(column, flex-start, flex-start);
+  }
+  width: 80%;
+  height: 535px;
+  &_name {
+    width: 20%;
+    position: relative;
+    height: 330px;
+    @include displayFlex(column, flex-start, flex-start);
+    @include mobile-design-two {
+      @include displayFlex(row, flex-start, flex-start);
+      width: 80%;
+      // margin-left: 20px;
+      position: absolute;
+      height: 160px;
+      margin-top: 0px;
+      top: 80px;
+    }
+    background-color: $profileBackgroundColor;
+    border-radius: 20px;
+    .container_profile {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      @include mobile-design-two {
+        @include displayFlex(row, center, center);
+      }
+      .profile_pic {
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 90px;
+        height: 90px;
+        @include mobile-design {
+          width: 70px;
+          height: 70px;
+        }
+        @include mobile-design-two {
+          width: 70%;
+          height: 70%;
+          margin-left: 40%;
+          margin-bottom: 0px;
+        }
+        border: 5px solid $profileBorderColor;
+        border-radius: 50%;
+      }
+      .person_name {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 60px;
+        @include mobile-design-two {
+          margin-bottom: 0px;
+          width: 80%;
+          margin-right: 10%;
+        }
+        color: whitesmoke;
+        .r_name {
+          font-size: 18px;
+          @include mobile-design {
+            font-size: 14px;
+          }
+          @include mobile-design-two {
+            font-size: 16px;
+          }
+        }
+        .name {
+          @include mobile-design-two {
+            width: 230px;
+            @include displayFlex(row, space-between, flex-start);
+            margin-top: 20px;
+            width: 80%;
+            height: auto;
+          }
+        }
+        .f_name {
+          font-size: 37px;
+          @include mobile-design {
+            font-size: 28px;
+          }
+          @include mobile-design-two {
+            text-align: justify;
+            font-size: 6vw;
+            margin-right: 10px;
+          }
+          color: whitesmoke;
+        }
+        .l_name {
+          font-size: 37px;
+          @include mobile-design {
+            font-size: 28px;
+          }
+          @include mobile-design-two {
+            text-align: justify;
+            font-size: 6vw;
+          }
+          color: whitesmoke;
+        }
+      }
+    }
+  }
+  &_time_table {
+    width: 100%;
+    height: 200px;
+    // z-index: -11;
+    top: 308px;
+    @include mobile-design-two {
+      top: 130px;
+      @include displayFlex(row, space-around, flex-start);
+      height: 100px;
+      margin-top: 130px;
+      position: absolute;
+      top: 0px;
+      z-index: -11;
+    }
+    position: absolute;
+    background-color: $InfoBackgroundColor;
+    border-radius: 20px;
+    padding-top: 32px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    .table {
+      margin-top: 17px;
+      @include mobile-design-two {
+        margin-top: 30px;
+      }
+      margin-bottom: 15px;
+      color: $textColor;
+      margin-bottom: 10px;
+      cursor: pointer;
+      &:hover {
+        color: $profileBorderColor;
+      }
+    }
+    .active {
+      color: $profileBorderColor;
+    }
+  }
+  &_time {
+    // visibility: hidden;
+    width: 80%;
+    height: 480px;
+    position: relative;
+    flex-wrap: wrap;
+    @include displayFlex(row, flex-start, flex-start);
+    @include mobile-design-two {
+      @include displayFlex(column, flex-start, flex-start);
+      height: auto;
+      position: absolute;
+      top: 330px;
+      // flex-wrap: nowrap;
+    }
+    .work {
+      background-color: $workingColor;
+    }
+    .study {
+      background-color: $studyingColor;
+    }
+    .play {
+      background-color: $playingColor;
+    }
+    .exercise {
+      background-color: $exercisingColor;
+    }
+    .social {
+      background-color: $socialingColor;
+    }
+    .self_care {
+      background-color: $selfCaringColor;
+    }
+    .row_one {
+      width: 30%;
+      @include mobile-design-two {
+        width: 100%;
+      }
+      height: 130px;
+      margin-left: 20px;
+      margin-bottom: 135px;
+      border-radius: 20px;
+      @include mobile-design-two {
+        margin-top: 0px;
+        margin-left: 0px;
+      }
+      overflow: hidden;
+      .table_one {
+        .img_one {
+          position: relative;
+          img {
+            position: absolute;
+            top: -10px;
+            left: 60%;
+            @include mobile-design {
+              left: 45%;
+            }
+          }
+        }
+      }
+      .row_two {
+        width: 30%;
+        @include mobile-design-two {
+          width: 100%;
+        }
+        height: 200px;
+        background-color: $InfoBackgroundColor;
+        position: absolute;
+        margin-top: 43px;
+        border-radius: 20px;
+        .row_header {
+          margin-top: 30px;
+          @include displayFlex(row, space-between, center);
+          padding: 0px 20px;
+          .header_name {
+            font-size: 24px;
+            color: $profileBorderColor;
+          }
+          .elipses {
+            cursor: pointer;
+            &:hover {
+              path {
+                fill: $profileBorderColor;
+              }
+            }
+          }
+        }
+        .row_time {
+          font-size: 50px;
+          color: $profileBorderColor;
+          margin-top: 20px;
+          padding-left: 20px;
+        }
+        .row_footer {
+          margin-top: 10px;
+          padding-left: 20px;
+          color: #bbc0ff;
+        }
+        &:hover {
+          background-color: $hoverBackgroundColor;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
