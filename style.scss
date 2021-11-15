@@ -50,19 +50,19 @@ body {
     width: 20%;
     position: relative;
     height: 330px;
+    z-index: 2;
     @include displayFlex(column, flex-start, flex-start);
     @include mobile-design-two {
       @include displayFlex(row, flex-start, flex-start);
       width: 80%;
-      // margin-left: 20px;
       position: absolute;
       height: 160px;
       margin-top: 0px;
       top: 80px;
     }
-    background-color: $profileBackgroundColor;
-    border-radius: 20px;
     .container_profile {
+      background-color: $profileBackgroundColor;
+      border-radius: 20px;
       width: 100%;
       height: 100%;
       position: absolute;
@@ -145,16 +145,13 @@ body {
   &_time_table {
     width: 100%;
     height: 200px;
-    // z-index: -11;
     top: 308px;
+    z-index: -11;
     @include mobile-design-two {
-      top: 130px;
       @include displayFlex(row, space-around, flex-start);
       height: 100px;
       margin-top: 130px;
-      position: absolute;
       top: 0px;
-      z-index: -11;
     }
     position: absolute;
     background-color: $InfoBackgroundColor;
