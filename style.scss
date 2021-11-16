@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
 $backgroundColor: hsl(226, 43%, 10%);
 $profileBackgroundColor: hsl(246, 80%, 60%);
 $profileBorderColor: white;
@@ -12,6 +13,7 @@ $socialingColor: hsl(264, 64%, 52%);
 $selfCaringColor: hsl(43, 84%, 65%);
 $mobileDesignone: 1070px;
 $mobileDesigntwo: 800px;
+$roboto-slab: "Rubik", sans-serif;
 @mixin mobile-design {
   @media (max-width: $mobileDesignone) {
     @content;
@@ -32,6 +34,7 @@ $mobileDesigntwo: 800px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $roboto-slab;
 }
 body {
   background-color: $backgroundColor;
@@ -177,7 +180,6 @@ body {
     }
   }
   &_time {
-    // visibility: hidden;
     width: 80%;
     height: 480px;
     position: relative;
@@ -188,7 +190,6 @@ body {
       height: auto;
       position: absolute;
       top: 330px;
-      // flex-wrap: nowrap;
     }
     .work {
       background-color: $workingColor;
